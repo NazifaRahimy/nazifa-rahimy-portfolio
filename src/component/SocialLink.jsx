@@ -45,7 +45,7 @@ const SocialLink = () => {
                 // href: '/invoice.pdf',
                 href: '/',
                 style: 'rounded-br-md',
-                download: 'true'
+                download: true,
             }
     ]
     return ( 
@@ -54,9 +54,10 @@ const SocialLink = () => {
           {
             links.map(({id, child, style, download, href})=>(
                 <li key={id}
-                 className={
-                "bg-gray-500 w-40 h-14 flex justify-between items-center px-4 ml-[-100px] hover:rounded-md duration-300 hover:ml-[-10px] " + " " + style
-                 }>
+                className={`bg-gray-500 w-40 h-14 flex justify-between items-center px-4 ml-[-100px] hover:rounded-md duration-300 hover:ml-[-10px] ${style || ""}`}
+                //  className={
+                // "bg-gray-500 w-40 h-14 flex justify-between items-center px-4 ml-[-100px] hover:rounded-md duration-300 hover:ml-[-10px] " + " " + style }
+                 >
                 <a href={href} target="_blank" rel="noreferrer"
                  className="text-white flex items-center justify-between w-full " download={download} >
                   {  child}
