@@ -1,73 +1,48 @@
-import {  FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SocialLink = () => {
-    const links =[
-        {
-            id: 1, 
-            child:(
-                <>
-                 LinkedIn <FaLinkedin size={30} />
-                </>
-            ),
-            href: 'https://www.linkedin.com/in/nazifa-rahimy-706a17346/',
-            style: 'rounded-tr-md'
-        },
-        {
-            id: 2,
-            child: (
-                <>
-                GitHub <FaGithub size={30} />
-                </>
-            ),
-            href: 'https://github.com/NazifaRahimy'
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    }, []);
 
-        },
-        {
-            id:3,
-            child: (
-                <>
-                Email < HiOutlineMailOpen size={30} />
-            
-                </>
-            ),
-            href: "mailto:nazifarahimy6@gmail.com",
-        },
-        
-            {
-                id:4,
-                child :(
-                    <>
-                    Resume <BsFillPersonLinesFill size={30} />
-                    </>
-                ),
-                // href: '/invoice.pdf',
-                href: '/',
-                style: 'rounded-br-md',
-                download: true,
-            }
-    ]
-    return ( 
-       <div className="hidden lg:flex top-[35%] left-0  flex-col fixed">
-           <ul>
-          {
-            links.map(({id, child, style, download, href})=>(
-                <li key={id}
-                className={`bg-gray-500 w-40 h-14 flex justify-between items-center px-4 ml-[-100px] hover:rounded-md duration-300 hover:ml-[-10px] ${style || ""}`}
-                //  className={
-                // "bg-gray-500 w-40 h-14 flex justify-between items-center px-4 ml-[-100px] hover:rounded-md duration-300 hover:ml-[-10px] " + " " + style }
-                 >
-                <a href={href} target="_blank" rel="noreferrer"
-                 className="text-white flex items-center justify-between w-full " download={download} >
-                  {  child}
+    return (
+        <div className="my-4">
+            <ul className="flex gap-5" data-aos="flip-down" data-aos-delay="1200">
+            {/* LinkedIn */}
+            <li className="group flex justify-between cursor-pointer    hover:shadow-[0_0_20px_rgb(109,67,0)] items-center border-2 border-[rgb(109,67,0)] p-2 rounded-full text-[rgb(109,67,0)] duration-300 transition-all hover:text-white hover:bg-[rgb(109,67,0)]">
+                <a href="https://www.linkedin.com/in/nazifa-rahimy-706a17346/" target="_blank" rel="noreferrer" className="group-hover:scale-[1.3] flex items-center justify-between w-full">
+                    <FaLinkedin size={20} />
                 </a>
             </li>
-            ))
-          }
-           </ul>
-       </div>
-     );
-}
- 
+            {/* GitHub */}
+            <li className="group flex justify-between    hover:shadow-[0_0_20px_rgb(109,67,0)] cursor-pointer items-center border-2 border-[rgb(109,67,0)] p-2 rounded-full text-[rgb(109,67,0)] duration-300 transition-all hover:text-white hover:bg-[rgb(109,67,0)]">
+                <a href="https://github.com/NazifaRahimy" target="_blank" rel="noreferrer" className="group-hover:scale-[1.3] flex items-center justify-between w-full">
+                    <FaGithub size={20} />
+                </a>
+            </li>
+            {/* Email */}
+            <li className="group flex justify-between    hover:shadow-[0_0_20px_rgb(109,67,0)] cursor-pointer items-center border-2 border-[rgb(109,67,0)] p-2 rounded-full text-[rgb(109,67,0)] duration-300 transition-all hover:text-white hover:bg-[rgb(109,67,0)]">
+                <a href="https://mail.google.com/mail/?view=cm&to=nazifarahimy6@gmail.com"  className="group-hover:scale-[1.3] flex items-center justify-between w-full">
+                    <HiOutlineMailOpen size={20} />
+                </a>
+            </li>
+            {/* Resume / PDF */}
+            <li className="group flex justify-between    hover:shadow-[0_0_20px_rgb(109,67,0)] cursor-pointer items-center border-2 border-[rgb(109,67,0)] p-2 rounded-full text-[rgb(109,67,0)] duration-300 transition-all hover:text-white hover:bg-[rgb(109,67,0)]">
+                <a href="/CV.pdf" download className="group-hover:scale-[1.3] flex items-center justify-between w-full">
+                    <BsFillPersonLinesFill size={20} />
+                </a>
+            </li>
+        </ul>
+    </div>
+  );
+};
+
 export default SocialLink;

@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
-
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
@@ -9,7 +7,27 @@
 
 @layer base {
     html {
-      font-family: "Raleway", serif;
+        font-family: "Raleway", serif;
+    }
+}
+@keyframes borderMove {
+    0% {
+        clip-path: inset(0 100% 100% 0); /* شروع از پایین-راست */
+    }
+    25% {
+        clip-path: inset(0 0 100% 0); /* حرکت به پایین-چپ */
+    }
+    50% {
+        clip-path: inset(0 0 0 0); /* بالا-چپ */
+    }
+    75% {
+        clip-path: inset(100% 0 0 0); /* بالا-راست */
+    }
+    100% {
+        clip-path: inset(0 100% 100% 0); /* برگشت به شروع */
     }
 }
 
+.animate-borderMove {
+    animation: borderMove 6s linear infinite;
+}
