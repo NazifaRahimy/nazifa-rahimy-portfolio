@@ -52,7 +52,7 @@ const Home = () => {
                     <p className="text-gray-500 py-4 text-xl font-normal " data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000"> I craft clean, interactive, and responsive user interfaces using HTML, CSS, Tailwind,JavaScript React and Next Js. Whether you're launching a brand or refreshing your current website, I can help you stand out online.</p>
                     <SocialLink />
                     <div>
-                        <Link to="portfolio" data-aos="zoom-out-right" data-aos-delay="1000"   smooth duration={500} className=" group text-white w-fit px-7 py-2 my-2 flex items-center rounded-md bg-[rgb(109,67,0)] cursor-pointer hover:text-[rgb(109,67,0)] hover:border-2 hover:border-[rgb(109,67,0)] hover:bg-transparent      hover:shadow-[0_0_40px_rgb(109,67,0)] duration-300 mt-5">  
+                        <Link to="portfolio" data-aos="zoom-out-right" data-aos-delay="1000"   className=" group text-white w-fit px-7 py-2 my-2 flex items-center rounded-md bg-[rgb(109,67,0)] cursor-pointer hover:text-[rgb(109,67,0)] hover:border-2 hover:border-[rgb(109,67,0)] hover:bg-transparent      hover:shadow-[0_0_40px_rgb(109,67,0)] duration-300 mt-5">  
                             Portfolio
                             <span className="group-hover:rotate-90 duration-300">
                                 <MdOutlineKeyboardArrowRight size={25} className="ml-1"/>
